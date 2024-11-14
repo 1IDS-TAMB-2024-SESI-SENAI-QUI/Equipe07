@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mundo dos Íons | Complete a Frase</title>
+    <link rel="stylesheet" href="inicial_jogo.css">
+    <meta name="viewport" cl-scale= "1.0">
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link rel="shortcut icon" href="imagens/logo mundo dos íons (1).png" type="image/x-icon">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+</head>
+<body>
+    <nav class="sidebar close">
+        <header>
+            <div class="image-text">
+                <span class="image">
+                    <img src="imagens/logo mundo dos íons.png">
+                </span>
+                <div class="text header-text">
+                    <span class="name">Mundo dos Íons</span>
+                </div>
+            </div>
+
+            <i class='bx bx-chevron-right toggle'></i>
+        </header>
+
+        <div class="menu-bar">
+            <div class="menu"> 
+                <li class="search-box">
+                    <i class='bx bx-search icon'></i>
+                    <input type="text" id="searchInput" placeholder="Pesquisar...">
+                </li>
+                <ul class="menu-links">
+                    <li class="nav-link">
+                        <a href="index.html">
+                            <i class='bx bx-home-alt icon'></i>
+                            <span class="text nav-text">Home</span>
+                        </a>
+                    </li>
+                    <li class="nav-link">
+                        <a href="acidos.html">
+                            <i class='bx bx-lemon icon'></i>
+                            <span class="text nav-text">Ácidos</span>
+                        </a>
+                    </li>
+                    <li class="nav-link">
+                        <a href="bases.html">
+                            <i class='bx bx-bong icon'></i>
+                            <span class="text nav-text">Bases</span>
+                        </a>
+                    </li>
+                    <li class="nav-link">
+                        <a href="sais.html">
+                            <i class='bx bx-atom icon'></i>
+                            <span class="text nav-text">Sais</span>
+                        </a>
+                    </li>
+                    <li class="nav-link">
+                        <a href="inicial_jogo.html">
+                            <i class='bx bx-dice-5 icon'></i>
+                            <span class="text nav-text">Jogo</span>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <section class="home">
+        <div class="text">Jogo</div>
+    </section>
+
+        <div class="game">
+            <div class="container">
+            <main>
+                <div class="jogo">
+                    <h1>Complete as frases</h1>
+                    <p>Clique em jogar para começar!</p>
+                    <button><a href="jogo.html"><h2>Jogar</h2></a></button>
+                </div>
+            </main>
+        </div>
+    </div>
+
+    <script>
+        const pages = [
+            { name: "Home", url: "index.html" },
+            { name: "Ácidos", url: "acidos.html" },
+            { name: "Bases", url: "bases.html" },
+            { name: "Sais", url: "sais.html" },
+            { name: "Exercícios", url: "ativ.html" },
+            { name: "Jogo", url: "inicial_jogo.html" }
+        ];
+
+        function searchPage() {
+            const input = document.getElementById("searchInput").value.toLowerCase();
+            const page = pages.find(p => p.name.toLowerCase() === input);
+            
+            if (page) {
+                window.location.href = page.url;
+            } else {
+                alert("Página não encontrada. Tente outro termo.");
+            }
+        }
+
+        document.getElementById("searchInput").addEventListener("keypress", function(event) {
+            if (event.key === "Enter") {
+                event.preventDefault();
+                searchPage();
+            }
+        });
+    </script>
+
+    <script src="script.js"></script>
+</body>
+</html>
